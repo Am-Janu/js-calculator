@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+        <h1 style="padding-left: 55px; display: inline-block;">My Calculator</h1>
+      <input type="text" id="display" class="display" disabled />
+      <div class="buttons">
+        <button onclick="append_value('1')">1</button>
+        <button onclick="append_value('2')">2</button>
+        <button onclick="append_value('3')">3</button>
+        <button onclick="clearAll()">C</button>
+        <button onclick="append_value('4')">4</button>
+        <button onclick="append_value('5')">5</button>
+        <button onclick="append_value('6')">6</button>
+        <button onclick="append_value('+')">+</button>
+        <button onclick="append_value('7')">7</button>
+        <button onclick="append_value('8')">8</button>
+        <button onclick="append_value('9')">9</button>
+        <button onclick="append_value('-')">-</button>
+        <button onclick="append_value('0')">0</button>
+        <button onclick="append_value('*')">*</button>
+        <button onclick="append_value('/')">/</button>
+        <button onclick="result()">=</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+
+    function clearAll(){
+        document.getElementById("display").value = "";
+    }
+
+  function append_value(input) {
+    document.getElementById("display").value += input;
+  }
+
+  function result() {
+    const display = document.getElementById("display");
+    try 
+    {
+      display.value = eval(display.value);
+    } catch (e) 
+    {
+      alert(e);
+    }
+  }
+</script>
